@@ -63,10 +63,9 @@ export default function Login() {
         </form>
 
         <div className="login-hint">
-          <p>Default owner: <strong>owner@office.com</strong> / <strong>owner123</strong></p>
-          <p style={{ marginTop: '0.5rem' }}>
+         
             New employee? <Link to="/register" style={{ color: 'var(--accent)', fontWeight: 600 }}>Create an account</Link>
-          </p>
+         
         </div>
       </div>
     </div>
