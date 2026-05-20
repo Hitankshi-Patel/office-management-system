@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import Base, engine
 from app.routers import auth, users, projects, attendance, tickets, leaves
+from app.config import settings
 
 # Import models so SQLAlchemy registers them before create_all
 import app.models  # noqa: F401
@@ -21,7 +22,7 @@ app = FastAPI(
 # CORS — allow React dev server
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=settings.get_allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
